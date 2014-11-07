@@ -24,10 +24,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable,
          :rememberable, :trackable, :validatable
 
-  before_action :authenticate_user!
-  user_signed_in?
-  current_user
-  member_session
   has_many :quits
 
   validates :name, presence: true
